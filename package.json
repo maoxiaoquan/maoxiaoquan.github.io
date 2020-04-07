@@ -1,11 +1,11 @@
 {
   "name": "maoxiaoquan.github.io",
   "version": "0.0.1",
-  "description": "",
+  "description": "专注于提升技术的博客",
   "main": "index.js",
   "authors": {
-    "name": "",
-    "email": ""
+    "name": "xq",
+    "email": "838115837@qq.com"
   },
   "repository": "/maoxiaoquan.github.io",
   "scripts": {
