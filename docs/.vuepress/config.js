@@ -34,6 +34,26 @@ module.exports = {
     lastUpdated: false,
     nav: [
       {
+        text: '主页',
+        link: '/',
+      },
+      {
+        text: '前端',
+        items: [
+          { text: '基础', link: '/language/chinese' },
+          { text: '进阶', link: '/language/english' },
+          { text: 'vue', link: '/language/english' },
+          { text: 'react', link: '/language/english' }
+        ]
+      },
+      {
+        text: '后端',
+        items: [
+          { text: 'node', link: '/language/chinese' },
+          { text: 'go', link: '/language/english' }
+        ]
+      },
+      {
         text: 'Guide',
         link: '/guide/',
       },
@@ -42,8 +62,12 @@ module.exports = {
         link: '/config/'
       },
       {
-        text: 'VuePress',
-        link: 'https://v1.vuepress.vuejs.org'
+        text: '关于',
+        link: '/guide/',
+      },
+      {
+        text: 'Github',
+        link: 'https://github.com/maoxiaoquan'
       }
     ],
     sidebar: {

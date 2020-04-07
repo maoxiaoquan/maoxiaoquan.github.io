@@ -3,8 +3,6 @@ const path = require('path')
 
 const delFileArr = [
   path.join(__dirname, '/assets'),
-  path.join(__dirname, '/config'),
-  path.join(__dirname, '/guide'),
   path.join(__dirname, '/index.html')
 ]
 
