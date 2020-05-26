@@ -40,6 +40,7 @@ module.exports = {
       {
         text: '前端',
         items: [
+          { text: 'javascript api详解', link: '/frontend/javascript/' },
           { text: '基础', link: '/language/chinese' },
           { text: '进阶', link: '/language/english' },
           { text: 'vue', link: '/language/english' },
