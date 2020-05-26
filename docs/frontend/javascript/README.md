@@ -30,3 +30,29 @@ Array.from(arrayLike[, mapFn[, thisArg]])
 * 返回值：
    - 一个新的数组实例.
 
+
+### Array.isArray()
+
+Array.isArray()用于确定传递的值是否是一个Array。
+
+``` js
+Array.isArray([1, 2, 3]);
+// true
+Array.isArray({foo: 123});
+// false
+Array.isArray("foobar");
+// false
+Array.isArray(undefined);
+// false
+```
+
+### 语法
+``` js
+Array.isArray(obj)
+```
+
+* 参数：
+  - obj 需要检测的值.
+* 返回值：
+  - 如果值是Array，则为true；否则为false.
+
