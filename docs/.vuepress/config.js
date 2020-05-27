@@ -18,7 +18,10 @@ module.exports = {
   head: [
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
+    [
+      'meta',
+      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
+    ],
   ],
 
   /**
@@ -40,19 +43,19 @@ module.exports = {
       {
         text: '前端',
         items: [
-          { text: 'javascript api详解', link: '/frontend/javascript/' },
           { text: '基础', link: '/language/chinese' },
           { text: '进阶', link: '/language/english' },
           { text: 'vue', link: '/language/english' },
-          { text: 'react', link: '/language/english' }
-        ]
+          { text: 'react', link: '/language/english' },
+          { text: 'JavaScript 标准内置对象', link: '/frontend/javascript/api' },
+        ],
       },
       {
         text: '后端',
         items: [
           { text: 'node', link: '/language/chinese' },
-          { text: 'go', link: '/language/english' }
-        ]
+          { text: 'go', link: '/language/english' },
+        ],
       },
       {
         text: 'Guide',
@@ -60,7 +63,7 @@ module.exports = {
       },
       {
         text: 'Config',
-        link: '/config/'
+        link: '/config/',
       },
       {
         text: '关于',
@@ -68,28 +71,22 @@ module.exports = {
       },
       {
         text: 'Github',
-        link: 'https://github.com/maoxiaoquan'
-      }
+        link: 'https://github.com/maoxiaoquan',
+      },
     ],
     sidebar: {
       '/guide/': [
         {
           title: 'Guide',
           collapsable: false,
-          children: [
-            '',
-            'using-vue',
-          ]
-        }
+          children: ['', 'using-vue'],
+        },
       ],
-    }
+    },
   },
 
   /**
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
    */
-  plugins: [
-    '@vuepress/plugin-back-to-top',
-    '@vuepress/plugin-medium-zoom',
-  ]
+  plugins: ['@vuepress/plugin-back-to-top', '@vuepress/plugin-medium-zoom'],
 }
