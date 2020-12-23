@@ -9,7 +9,6 @@ module.exports = {
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
   description: description,
-
   /**
    * Extra tags to be injected to the page HTML `<head>`
    *
@@ -43,46 +42,63 @@ module.exports = {
       {
         text: '前端',
         items: [
-          { text: '基础', link: '/language/chinese' },
-          { text: '进阶', link: '/language/english' },
-          { text: 'vue', link: '/language/english' },
-          { text: 'react', link: '/language/english' },
+          // { text: '基础', link: '/frontend/javascript/api' },
+          // { text: '进阶', link: '/frontend/javascript/api' },
+          {
+            text: 'Vue',
+            items: [
+              { text: '源码解析', link: '/frontend/vue/source-code-analysis' },
+              // { text: 'go', link: '/frontend/javascript/api' },
+            ],
+          },
+          // {
+          //   text: 'React',
+          //   items: [
+          //     { text: 'node', link: '/frontend/javascript/api' },
+          //     { text: 'go', link: '/frontend/javascript/api' },
+          //   ],
+          // },
           { text: 'JavaScript 标准内置对象', link: '/frontend/javascript/api' },
         ],
       },
-      {
-        text: '后端',
-        items: [
-          { text: 'node', link: '/language/chinese' },
-          { text: 'go', link: '/language/english' },
-        ],
-      },
-      {
-        text: 'Guide',
-        link: '/guide/',
-      },
-      {
-        text: 'Config',
-        link: '/config/',
-      },
-      {
-        text: '关于',
-        link: '/guide/',
-      },
+      // {
+      //   text: '后端',
+      //   items: [
+      //     { text: 'node', link: '/language/chinese' },
+      //     { text: 'go', link: '/language/english' },
+      //   ],
+      // },
+      // {
+      //   text: 'Guide',
+      //   link: '/guide/english',
+      // },
+      // {
+      //   text: 'Config',
+      //   link: '/config/',
+      // },
+      // {
+      //   text: '关于',
+      //   link: '/guide/english',
+      // },
       {
         text: 'Github',
         link: 'https://github.com/maoxiaoquan',
       },
     ],
-    sidebar: {
-      '/guide/': [
-        {
-          title: 'Guide',
-          collapsable: false,
-          children: ['', 'using-vue'],
-        },
-      ],
-    },
+    sidebar: [
+      '/',
+      // '/page-a',
+      // ['/page-b', 'Explicit link text']
+    ]
+    // sidebar: {
+    //   '/guide/': [ 
+    //     {
+    //       title: 'Guide',
+    //       collapsable: false,
+    //       children: ['', 'using-vue'],
+    //     },
+    //   ],
+    // },
   },
 
   /**
