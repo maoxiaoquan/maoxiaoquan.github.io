@@ -58,7 +58,21 @@ module.exports = {
           //     { text: 'go', link: '/frontend/javascript/api' },
           //   ],
           // },
-          { text: 'JavaScript 标准内置对象', link: '/frontend/javascript/api' },
+          {
+            text: '面试',
+            items: [
+              { text: '高级前端进阶', link: '/frontend/interview/advanced-front-end' },
+              // { text: 'go', link: '/frontend/javascript/api' },
+            ],
+          },
+          {
+            text: 'Javascript',
+            items: [
+              { text: 'JavaScript 标准内置对象', link: '/frontend/javascript/api' },
+              // { text: 'go', link: '/frontend/javascript/api' },
+            ],
+          },
+
         ],
       },
       // {
