@@ -75,6 +75,19 @@ module.exports = {
 
         ],
       },
+      {
+        text: '工具&插件',
+        items: [
+          {
+            text: '开发工具配置',
+            items: [
+              { text: 'Vs code 配置', link: '/dev-tools/tools/doc' },
+              // { text: 'go', link: '/frontend/javascript/api' },
+            ],
+          },
+          // { text: 'go', link: '/language/english' },
+        ],
+      },
       // {
       //   text: '后端',
       //   items: [
