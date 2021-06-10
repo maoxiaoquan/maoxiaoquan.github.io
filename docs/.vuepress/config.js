@@ -69,7 +69,7 @@ module.exports = {
             text: 'Javascript',
             items: [
               { text: 'JavaScript 标准内置对象', link: '/frontend/javascript/api' },
-              // { text: 'go', link: '/frontend/javascript/api' },
+              { text: '学习笔记', link: '/frontend/javascript/study-notes' },
             ],
           },
 
