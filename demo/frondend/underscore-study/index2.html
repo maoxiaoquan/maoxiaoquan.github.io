@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    let arr = [
+      { id: 1, name: '部门1', pid: 0 },
+      { id: 2, name: '部门2', pid: 1 },
+      { id: 3, name: '部门3', pid: 1 },
+      { id: 4, name: '部门4', pid: 3 },
+      { id: 5, name: '部门5', pid: 4 },
+      { id: 8, name: '部门8', pid: 7 },
+    ]
+
+
+    function treeParsing(list, key, parKey) {
+      const allIds = []
+      let newTree = []
+      list.map(item => {
+        allIds.push(item[key])
+      })
+
+      list.map(item => {
+        if (!allIds.includes(item[parKey])) {
+          newTree.push(item)
+        }
+      })
+
+      function treeRecursion(childItem) {
+        childItem.child = []
+        list.map((itemList, index) => {
+          if (childItem.id === itemList.pid) {
+
+            childItem.child = [...childItem.child, itemList]
+            if (childItem.child.length > 0) {
+              childItem.child.map((itemChildChild) => {
+                treeRecursion(itemChildChild)
+              })
+            }
+          }
+        })
+      }
+
+      newTree.map(item => {
+        treeRecursion(item)
+      })
+
+      console.log('newTree', newTree)
+
+    }
+
+
+    treeParsing(arr, 'id', 'pid')
+    console.log('arr', arr)
+
+  </script>
+</body>
+
+</html>

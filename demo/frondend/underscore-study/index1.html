@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>节流和防抖</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      .wrap {
+        display: flex;
+        -webkit-box-orient: vertical;
+        flex-direction: column;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+      }
+      .header,
+      .footer {
+        height: 40px;
+        line-height: 40px;
+        background-color: #d8d8d8;
+        text-align: center;
+      }
+      .main {
+        flex: 1;
+        width: 100%;
+        overflow: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="header">header</div>
+      <div class="main">
+        弹性滚动区域
+      </div>
+      <div class="footer">footer</div>
+    </div>
+    <script>
+      var c = {
+        b: 88,
+      };
+
+      function k(a, n) {
+        console.log(a, n);
+        console.log(this.b);
+      }
+
+      Function.prototype.call2 = function(ctx) {
+        var ctx = ctx || window;
+        ctx.fn = this;
+        var args = [];
+        for (var i = 1; i < arguments.length; i++) {
+          args.push("arguments[" + i + "]");
+        }
+        eval("ctx.fn(" + args + ")");
+        delete ctx.fn;
+      };
+
+      k.call2(c, 7, 8);
+    </script>
+  </body>
+</html>
