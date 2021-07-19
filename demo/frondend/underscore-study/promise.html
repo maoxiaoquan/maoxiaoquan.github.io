@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+    function Promise(fn) {
+      this.resolveCbs = []
+      this.rejectCbs = []
+      const resolve = (value) => {
+        setTimeout(() => {
+          this.resolveCbs.forEach(item => {
+            item(value)
+          })
+        })
+      }
+
+      const reject = (value) => {
+        setTimeout(() => {
+          this.rejectCbs.forEach(item => {
+            item(value)
+          })
+        })
+      }
+
+      fn(resolve, reject)
+    }
+
+    Promise.prototype.then = function (cb) {
+      return new Promise((resolve) => {
+        this.resolveCbs.push((val) => {
+          const res = cb(val)
+          if (res instanceof Promise) {
+            res.then(resolve)
+          } else {
+            resolve(res)
+          }
+        })
+      })
+    }
+
+    new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(1);
+      }, 500);
+    })
+      .then((res) => {
+        console.log(res);
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(2);
+          }, 500);
+        });
+      })
+      .then((e) => {
+        console.log(e)
+        return 3
+      }).then((e) => {
+        console.log(e)
+        return 4
+      })
+      .then((e) => {
+        console.log(e)
+        return 5
+      });
+
+
+  </script>
+</body>
+
+</html>
