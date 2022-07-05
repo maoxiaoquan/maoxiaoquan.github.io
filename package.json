@@ -9,11 +9,11 @@
   },
   "repository": "/maoxiaoquan.github.io",
   "scripts": {
-    "dev": "vuepress dev docs --temp .temp",
-    "build": "vuepress build docs",
+    "dev": "vuepress dev src --temp .temp",
+    "build": "vuepress build src",
     "del": "node del",
     "copy": "gulp copy",
-    "bd": "npm run del && npm run build && npm run copy"
+    "build:pro": "npm run del && npm run build && npm run copy"
   },
   "license": "MIT",
   "devDependencies": {
