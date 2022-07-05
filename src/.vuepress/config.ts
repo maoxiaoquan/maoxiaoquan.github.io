@@ -1,9 +1,7 @@
 import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress";
+const { searchPlugin } = require("@vuepress/plugin-search");
 const { description } = require("../../package");
-const { backToTopPlugin } = require("@vuepress/plugin-back-to-top");
-const { mediumZoomPlugin } = require("@vuepress/plugin-medium-zoom");
-// const pluginMediumZoom = require('@vuepress/plugin-medium-zoom"');
 
 export default defineUserConfig({
   lang: "zh-CN",
@@ -83,8 +81,7 @@ export default defineUserConfig({
     sidebar: ["/"],
   }),
   plugins: [
-    backToTopPlugin(),
-    mediumZoomPlugin({
+    searchPlugin({
       // 配置项
     }),
   ],
