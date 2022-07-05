@@ -1,7 +1,8 @@
 import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress";
 const { description } = require("../../package");
-// const pluginBackToTop = require("@vuepress/plugin-back-to-top");
+const { backToTopPlugin } = require("@vuepress/plugin-back-to-top");
+const { mediumZoomPlugin } = require("@vuepress/plugin-medium-zoom");
 // const pluginMediumZoom = require('@vuepress/plugin-medium-zoom"');
 
 export default defineUserConfig({
@@ -81,6 +82,10 @@ export default defineUserConfig({
     ],
     sidebar: ["/"],
   }),
-  // plugins: ["@vuepress/plugin-back-to-top", "@vuepress/plugin-medium-zoom"],
-  // plugins: [pluginBackToTop(), pluginMediumZoom()],
+  plugins: [
+    backToTopPlugin(),
+    mediumZoomPlugin({
+      // 配置项
+    }),
+  ],
 });
