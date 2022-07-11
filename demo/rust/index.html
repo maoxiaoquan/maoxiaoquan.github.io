@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .sjx {
+        margin-top: 60px;
+        margin-left: 60px;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 0, 0, 0.276);
+      }
+      .shake-bl {
+        -webkit-animation: shake-bl 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+          both;
+        animation: shake-bl 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+      }
+      @keyframes shake-bl {
+        0%,
+        100% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+          -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+        }
+        90% {
+          -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sjx shake-bl"></div>
+  </body>
+</html>

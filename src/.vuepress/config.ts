@@ -2,6 +2,7 @@ import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress";
 const { searchPlugin } = require("@vuepress/plugin-search");
 const { description } = require("../../package");
+import path from "path";
 
 export default defineUserConfig({
   lang: "zh-CN",
@@ -15,6 +16,7 @@ export default defineUserConfig({
       { name: "apple-mobile-web-app-status-bar-style", content: "black" },
     ],
   ],
+  dest: path.resolve(__dirname, "../../docs"),
   theme: defaultTheme({
     // 默认主题配置
     repo: "",
