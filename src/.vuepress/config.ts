@@ -36,7 +36,7 @@ export default defineUserConfig({
             children: [
               {
                 text: "源码解析",
-                link: "/article/frontend/vue/source-code-analysis",
+                link: "/frontend/vue/source-code-analysis",
               },
             ],
           },
@@ -45,7 +45,7 @@ export default defineUserConfig({
             children: [
               {
                 text: "高级前端进阶",
-                link: "/article/frontend/interview/advanced-front-end",
+                link: "/frontend/interview/advanced-front-end",
               },
             ],
           },
@@ -54,11 +54,11 @@ export default defineUserConfig({
             children: [
               {
                 text: "JavaScript 标准内置对象",
-                link: "/article/frontend/javascript/api",
+                link: "/frontend/javascript/api",
               },
               {
                 text: "学习笔记",
-                link: "/article/frontend/javascript/study-notes",
+                link: "/frontend/javascript/study-notes",
               },
             ],
           },
@@ -69,9 +69,7 @@ export default defineUserConfig({
         children: [
           {
             text: "开发工具配置",
-            children: [
-              { text: "Vs code 配置", link: "/article/dev-tools/tools/doc" },
-            ],
+            children: [{ text: "Vs code 配置", link: "/dev-tools/tools/doc" }],
           },
         ],
       },
@@ -82,5 +80,5 @@ export default defineUserConfig({
     ],
     sidebar: ["/"],
   }),
-  // plugins: [searchPlugin({})],
+  plugins: [searchPlugin({})],
 });
