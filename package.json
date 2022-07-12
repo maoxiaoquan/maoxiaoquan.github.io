@@ -18,17 +18,11 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@vuepress/client": "^2.0.0-beta.48",
     "gulp": "^4.0.2",
     "gulp-each": "^0.5.0",
     "gulp-rename": "^2.0.0",
     "rimraf": "^3.0.2",
-    "vue": "^3.2.37",
     "vuepress": "^2.0.0-beta.48"
-  },
-  "peerDependencies": {
-    "@vuepress/client": "^2.0.0-beta.48",
-    "vue": "^3.2.37"
   },
   "dependencies": {
     "@vuepress/plugin-search": "^2.0.0-beta.48"
