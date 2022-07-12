@@ -16,14 +16,9 @@ export default defineUserConfig({
       { name: "apple-mobile-web-app-status-bar-style", content: "black" },
     ],
   ],
-
   // dest: path.resolve(__dirname, "../../docs"),
   theme: defaultTheme({
     // 默认主题配置
-    repo: "",
-    docsDir: "",
-    editLinkText: "",
-    lastUpdated: false,
     navbar: [
       {
         text: "主页",
