@@ -2,7 +2,7 @@ import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress";
 const { searchPlugin } = require("@vuepress/plugin-search");
 const { description } = require("../../package");
-import path from "path";
+// import path from "path";
 
 export default defineUserConfig({
   lang: "zh-CN",
@@ -16,7 +16,8 @@ export default defineUserConfig({
       { name: "apple-mobile-web-app-status-bar-style", content: "black" },
     ],
   ],
-  //  dest: path.resolve(__dirname, "../../docs"),
+
+  // dest: path.resolve(__dirname, "../../docs"),
   theme: defaultTheme({
     // 默认主题配置
     repo: "",
@@ -36,7 +37,7 @@ export default defineUserConfig({
             children: [
               {
                 text: "源码解析",
-                link: "/frontend/vue/source-code-analysis",
+                link: "/article/frontend/vue/source-code-analysis",
               },
             ],
           },
@@ -45,7 +46,7 @@ export default defineUserConfig({
             children: [
               {
                 text: "高级前端进阶",
-                link: "/frontend/interview/advanced-front-end",
+                link: "/article/frontend/interview/advanced-front-end",
               },
             ],
           },
@@ -54,11 +55,11 @@ export default defineUserConfig({
             children: [
               {
                 text: "JavaScript 标准内置对象",
-                link: "/frontend/javascript/api",
+                link: "/article/frontend/javascript/api",
               },
               {
                 text: "学习笔记",
-                link: "/frontend/javascript/study-notes",
+                link: "/article/frontend/javascript/study-notes",
               },
             ],
           },
@@ -69,7 +70,9 @@ export default defineUserConfig({
         children: [
           {
             text: "开发工具配置",
-            children: [{ text: "Vs code 配置", link: "/dev-tools/tools/doc" }],
+            children: [
+              { text: "Vs code 配置", link: "/article/dev-tools/tools/doc" },
+            ],
           },
         ],
       },
@@ -80,5 +83,9 @@ export default defineUserConfig({
     ],
     sidebar: ["/"],
   }),
-  plugins: [searchPlugin({})],
+  plugins: [
+    searchPlugin({
+      // 配置项
+    }),
+  ],
 });
