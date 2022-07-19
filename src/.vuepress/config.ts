@@ -32,7 +32,7 @@ export default defineUserConfig({
             children: [
               {
                 text: "源码解析",
-                link: "/article/frontend/vue/source-code-analysis",
+                link: "/article/front-end/vue/source-code-analysis",
               },
             ],
           },
@@ -40,8 +40,12 @@ export default defineUserConfig({
             text: "面试",
             children: [
               {
+                text: "常见面试题",
+                link: "/article/front-end/interview/question",
+              },
+              {
                 text: "高级前端进阶",
-                link: "/article/frontend/interview/advanced-front-end",
+                link: "/article/front-end/interview/advanced-front-end",
               },
             ],
           },
@@ -50,11 +54,25 @@ export default defineUserConfig({
             children: [
               {
                 text: "JavaScript 标准内置对象",
-                link: "/article/frontend/javascript/api",
+                link: "/article/front-end/javascript/api",
               },
               {
                 text: "学习笔记",
-                link: "/article/frontend/javascript/study-notes",
+                link: "/article/front-end/javascript/study-notes",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        text: "后端",
+        children: [
+          {
+            text: "Rust",
+            children: [
+              {
+                text: "入门学习",
+                link: "/article/back-end/rust/getting-started",
               },
             ],
           },
