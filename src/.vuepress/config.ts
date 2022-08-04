@@ -28,11 +28,15 @@ export default defineUserConfig({
         text: "前端",
         children: [
           {
-            text: "Vue",
+            text: "基础",
             children: [
               {
-                text: "源码解析",
-                link: "/article/front-end/vue/source-code-analysis",
+                text: "html 基础",
+                link: "/article/front-end/basis/html-basis",
+              },
+              {
+                text: "css 基础",
+                link: "/article/front-end/basis/css-basis",
               },
             ],
           },
@@ -50,8 +54,21 @@ export default defineUserConfig({
             ],
           },
           {
+            text: "Vue",
+            children: [
+              {
+                text: "源码解析",
+                link: "/article/front-end/vue/source-code-analysis",
+              },
+            ],
+          },
+          {
             text: "Javascript",
             children: [
+              {
+                text: "JavaScript 基础",
+                link: "/article/front-end/javascript/basis",
+              },
               {
                 text: "JavaScript 标准内置对象",
                 link: "/article/front-end/javascript/api",
@@ -59,6 +76,24 @@ export default defineUserConfig({
               {
                 text: "学习笔记",
                 link: "/article/front-end/javascript/study-notes",
+              },
+            ],
+          },
+          {
+            text: "工程化",
+            children: [
+              {
+                text: "webpack",
+                link: "/article/front-end/engineering/webpack",
+              },
+            ],
+          },
+          {
+            text: "工具",
+            children: [
+              {
+                text: "Vs code 配置",
+                link: "/article/front-end/tool/vscode",
               },
             ],
           },
@@ -74,17 +109,6 @@ export default defineUserConfig({
                 text: "入门学习",
                 link: "/article/back-end/rust/getting-started",
               },
-            ],
-          },
-        ],
-      },
-      {
-        text: "工具&插件",
-        children: [
-          {
-            text: "开发工具配置",
-            children: [
-              { text: "Vs code 配置", link: "/article/dev-tools/tools/doc" },
             ],
           },
         ],

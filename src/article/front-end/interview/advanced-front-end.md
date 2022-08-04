@@ -8,29 +8,6 @@ sidebar: auto
 
 当前用作拷贝防丢--
 
-## 前言
-
-我曾经一度很迷茫，在学了 Vue、React 的实战开发和应用以后，好像遇到了一些瓶颈，不知道该怎样继续深入下去。相信这也是很多一两年经验的前端工程师所遇到共同问题，这篇文章，笔者想结合自己的一些成长经历整理出一些路线，帮助各位初中级前端工程师少走一些弯路。
-
-这篇文章会提到非常非常多的学习路线和链接，如果你还在初中级的阶段，不必太焦虑，可以把这篇文章作为一个进阶的`路线图`，在未来的时日里朝着这个方向努力就好。  
-我也并不是说这篇文章是进阶高级工程师的唯一一条路线，如果你在业务上做的精进，亦或是能在沟通上八面玲珑，配合各方面力量把项目做的漂漂亮亮，那你也一样可以拥有这个头衔。本文只是我自己的一个成长路线总结。
-
-本篇文章面对的人群是开发经验`1到3年的初中级前端工程师`，希望能和你们交个心。
-
-已经晋升高级前端的同学，欢迎你在评论区留下你的心得，补充我的一些缺失和不足。
-
-笔者本人 17 年毕业于一所普通的本科学校，20 年 6 月在三年经验的时候顺利通过面试进入大厂，职级是高级前端开发。
-
-[我的 github 地址](https://github.com/sl1673495)，欢迎 follow，我会持续更新一些值得你关注的项目。
-
-[我的 blog 地址](https://github.com/sl1673495/blogs)，这里会持续更新，点个 star 不失联！✨
-
-## 基础能力
-
-我整理了一篇中级前端的必备技术栈能力，[写给女朋友的中级前端面试秘籍](https://juejin.im/post/5e7af0685188255dcf4a497e) 。这篇文章里的技术栈当然都是需要扎实掌握的，（其实我自己也有一些漏缺，偷偷补一下）。
-
-当然了，上进心十足的你不会一直满足于做中级前端，我们要继续向上，升职加薪，迎娶白富美！
-
 ## JavaScript
 
 #### 原生 js 系列
@@ -38,7 +15,7 @@ sidebar: auto
 冴羽大佬的这篇博客里，除了 undescore 的部分，你需要全部都能掌握。并且灵活的运用到开发中去。  
 [JavaScript 深入系列、JavaScript 专题系列、ES6 系列](https://github.com/mqyqingfeng/Blog)
 
-#### 完全熟练掌握 eventLoop。
+#### 完全熟练掌握 eventLoop
 
 [tasks-microtasks-queues-and-schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules)
 
@@ -91,7 +68,7 @@ babel 对于 async await 配合 generator 函数，做的非常巧妙，这里�
 
 有时候组合是优于继承的，不光是面向对象编程可以实现复用，在某些场景下，组合的思想可能会更加简洁优雅。
 
-https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9
+<https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9>
 
 > “…the problem with object-oriented languages is they’ve got all this implicit environment that they carry around with them. You wanted a banana but what you got was a gorilla holding the banana and the entire jungle.” ~ Joe Armstrong — “Coders at Work”
 
@@ -171,7 +148,7 @@ Vue 方面的话，我主要是师从黄轶老师，跟着他认真走，基本�
    [confirm 组件](https://github.com/sl1673495/vue-netease-music/blob/master/src/base/confirm.vue)
 
 ```js
-export const confirm = function(text, title, onConfirm = () => {}) {
+export const confirm = function (text, title, onConfirm = () => {}) {
   if (typeof title === "function") {
     onConfirm = title;
     title = undefined;
@@ -367,7 +344,7 @@ React 中优化组件重渲染，这里有几个隐含的知识点。
 #### 入门
 
 1. 除了官方文档以外，还有一些比较好的中文入门教程。  
-   [TypeScript Handbook 入门教程 ](https://zhongsp.gitbooks.io/typescript-handbook/content/)
+   [TypeScript Handbook 入门教程](https://zhongsp.gitbooks.io/typescript-handbook/content/)
 
 2. TypeScript Deep Dive 非常高质量的英文入门教学。  
    [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/type-system)
@@ -387,7 +364,7 @@ React 中优化组件重渲染，这里有几个隐含的知识点。
    [conditional-types-in-typescript](https://mariusschulz.com/blog/conditional-types-in-typescript)
 
 3. 以及上面那个大佬博客中的所有 TS 文章。  
-   https://mariusschulz.com
+   <https://mariusschulz.com>
 
 #### 实战
 
@@ -653,25 +630,3 @@ function AppInner({ children }) {
 [medium](https://medium.com)
 
 medium 可能需要借助一些科学工具才能查看，但是里面的会员付费以及作者激励机制使得文章非常的优质。登录自己的谷歌账号即可成为会员，前期可能首页不会推荐一些前端相关的文章，你可以自己去搜索关键字如`Vue`、`React`、`Webpack`，任何你兴趣的前端技术栈，不需要过多久你的首页就会出现前端的推荐内容。好好享受这个高质量的英文社区吧。
-
-## 关于实践
-
-社区有很多大佬实力很强，但是对新手写的代码嗤之以鼻，认为有 `any` 的就不叫 `TypeScript`、认为没有`单元测试`就没资格丢到 Github 上去。这种言论其实也不怪他们，他们也只是对开源软件的要求高到偏执而已。但是对于新手学习来说，这种言论很容易对大家造成打击，导致不敢写 ts，写的东西不敢放出来。其实大可不必，`工业聚` 对于这些观点就发表了一篇很好的看法，让我觉得深受打动，也就是这篇文章开始，我慢慢的把旧项目用 ts 改造起来，慢慢的进步。
-
-[Vue 3.0 公开代码之后……](https://mp.weixin.qq.com/s?__biz=MzA4Njc2MTE3Ng==&mid=2456151423&idx=1&sn=2fec2ff0606b865abaaaaea48ddfd167&chksm=88528ec8bf2507de91cec62b4bad281fb8bf6d16c8a1ea04ea3fedb871099dfb7fda42082fff&mpshare=1&scene=1&srcid=&sharer_sharetime=1585884823115&sharer_shareid=82384198865aad802052fa45394cd852#rd)
-
-## 总结
-
-本篇文章是我在这一年多的学习经历抽象中总结出来，还有很多东西我会陆续加入到这篇文章中去。
-
-希望作为初中级前端工程师的你，能够有所收获。如果能够帮助到你就是我最大的满足。
-
-未完待续... 持续更新中。
-
-## ❤️ 感谢大家
-
-1.如果本文对你有帮助，就点个赞支持下吧，你的「赞」是我创作的动力。
-
-2.关注公众号「前端从进阶到入院」即可加我好友，我拉你进「前端进阶交流群」，大家一起共同交流和进步。
-
-![](https://user-gold-cdn.xitu.io/2020/4/5/17149ccf687b7699?w=910&h=436&f=jpeg&s=78195)

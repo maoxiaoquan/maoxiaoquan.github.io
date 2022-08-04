@@ -2,11 +2,11 @@
 sidebar: auto
 ---
 
-<!-- # Rust 入门
+# Rust 入门
 
 ## 入门
 
-### 概念 -->
+### 概念
 
 #### Attribute 属性
 
@@ -37,8 +37,6 @@ Meta Item Attribute Syntax 实际上描述了属性语法的基本结构。
 | MetaListPaths        | allow(unused, clippy::inline_always)              |
 | MetaListIdents       | macro_use(foo, bar)                               |
 | MetaListNameValueStr | link(name = "CoreFoundation", kind = "framework") |
-| Style                | Example                                           |
-| Style                | Example                                           |
 
 我们在 Rust 代码中看到的所有属性语法都是上述五种中的一种或其组合。
 
