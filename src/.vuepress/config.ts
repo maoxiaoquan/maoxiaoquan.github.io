@@ -162,6 +162,10 @@ export default defineUserConfig({
                 text: "学习笔记",
                 link: "/article/front-end/javascript/study-notes",
               },
+              {
+                text: "Event-Loop",
+                link: "/article/front-end/javascript/event-loop",
+              },
             ],
           },
           {
