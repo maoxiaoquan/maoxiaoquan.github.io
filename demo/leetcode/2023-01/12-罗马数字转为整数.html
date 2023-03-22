@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12-罗马数字转为整数</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * @param {number} x
+       * @return {boolean}
+       */
+      /**
+       *
+       * @param {string} s
+       * @return {number}
+       */
+      var romanToInt = function (s) {
+        const obj = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+        let total = 0;
+        for (let i = 0; i < s.length; i++) {
+          if (i + 1 < s.length && obj[s[i]] < obj[s[i + 1]]) {
+            total -= obj[s[i]];
+          } else {
+            total += obj[s[i]];
+          }
+        }
+        return total;
+      };
+
+      console.log("--:", romanToInt("III"));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. 回文数</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * @param {number} x
+       * @return {boolean}
+       */
+      var isPalindrome = function (x) {
+        if (x === 0) {
+          return true;
+        } else {
+          if (x.toString() === x.toString().split("").reverse().join("")) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+      };
+
+      console.log(isPalindrome(101));
+    </script>
+  </body>
+</html>

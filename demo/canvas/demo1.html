@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Canvas 3D 游戏示例</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script>
+      // 创建 canvas 元素
+      const canvas = document.createElement("canvas");
+      canvas.width = 800;
+      canvas.height = 600;
+      document.body.appendChild(canvas);
+
+      // 获取 2D 上下文
+      const ctx = canvas.getContext("2d");
+
+      // 创建相机对象
+      const camera = {
+        x: 0,
+        y: 0,
+        z: 0,
+        fov: 90,
+        near: 0.1,
+        far: 1000,
+      };
+
+      // 创建光源对象
+      const light = {
+        x: 0,
+        y: 0,
+        z: 0,
+        color: [255, 255, 255],
+        intensity: 1,
+      };
+
+      // 创建场景对象
+      const scene = {
+        objects: [],
+      };
+
+      // 创建渲染器对象
+      const renderer = {
+        render: function () {
+          // 清空画布
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+          // 遍历场景中的所有对象
+          for (let i = 0; i < scene.objects.length; i++) {
+            const object = scene.objects[i];
+
+            // 计算相机空间中的顶点位置
+            const vertices = [];
+            for (let j = 0; j < object.vertices.length; j++) {
+              const vertex = object.vertices[j];
+
+              // 将顶点从物体空间转换到世界空间
+              const worldVertex = {
+                x: vertex.x + object.x,
+                y: vertex.y + object.y,
+                z: vertex.z + object.z,
+              };
+
+              // 将顶点从世界空间转换到相机空间
+              const cameraVertex = {
+                x: worldVertex.x - camera.x,
+                y: worldVertex.y - camera.y,
+                z: worldVertex.z - camera.z,
+              };
+
+              // 计算透视投影后的顶点位置
+              const perspectiveVertex = {
+                x: (cameraVertex.x * camera.fov) / camera.z,
+                y: (cameraVertex.y * camera.fov) / camera.z,
+                z: cameraVertex.z,
+              };
+
+              // 计算屏幕空间中的顶点位置
+              const screenVertex = {
+                x: canvas.width / 2 + perspectiveVertex.x,
+                y: canvas.height / 2 - perspectiveVertex.y,
+              };
+
+              vertices.push(screenVertex);
+            }
+
+            // 绘制三角形面片
+            ctx.beginPath();
+            ctx.moveTo(vertices[0].x, vertices[0].y);
+            for (let j = 1; j < vertices.length; j++) {
+              ctx.lineTo(vertices[j].x, vertices[j].y);
+            }
+            ctx.closePath();
+
+            // 计算光照效果
+            const normal = {
+              x:
+                (vertices[1].y - vertices[0].y) *
+                  (vertices[2].z - vertices[0].z) -
+                (vertices[1].z - vertices[0].z) *
+                  (vertices[2].y - vertices[0].y),
+              y:
+                (vertices[1].z - vertices[0].z) *
+                  (vertices[2].x - vertices[0].x) -
+                (vertices[1].x - vertices[0].x) *
+                  (vertices[2].z - vertices[0].z),
+              z:
+                (vertices[1].x - vertices[0].x) *
+                  (vertices[2].y - vertices[0].y) -
+                (vertices[1].y - vertices[0].y) *
+                  (vertices[2].x - vertices[0].x),
+            };
+            const lightVector = {
+              x: light.x - object.x,
+              y: light.y - object.y,
+              z: light.z - object.z,
+            };
+            const dotProduct =
+              normal.x * lightVector.x +
+              normal.y * lightVector.y +
+              normal.z * lightVector.z;
+            const brightness = Math.max(
+              0,
+              Math.min(
+                1,
+                (dotProduct /
+                  (Math.sqrt(
+                    normal.x * normal.x +
+                      normal.y * normal.y +
+                      normal.z * normal.z
+                  ) *
+                    Math.sqrt(
+                      lightVector.x * lightVector.x +
+                        lightVector.y * lightVector.y +
+                        lightVector.z * lightVector.z
+                    ))) *
+                  light.intensity
+              )
+            );
+            ctx.fillStyle = `rgb(${light.color[0] * brightness}, ${
+              light.color[1] * brightness
+            }, ${light.color[2] * brightness})`;
+            ctx.fill();
+          }
+        },
+      };
+
+      // 创建立方体对象
+      const cube = {
+        x: 0,
+        y: 0,
+        z: 5,
+        vertices: [
+          { x: -1, y: -1, z: -1 },
+          { x: -1, y: -1, z: 1 },
+          { x: -1, y: 1, z: -1 },
+          { x: -1, y: 1, z: 1 },
+          { x: 1, y: -1, z: -1 },
+          { x: 1, y: -1, z: 1 },
+          { x: 1, y: 1, z: -1 },
+          { x: 1, y: 1, z: 1 },
+        ],
+      };
+      scene.objects.push(cube);
+
+      // 创建游戏循环
+      function gameLoop() {
+        renderer.render();
+        requestAnimationFrame(gameLoop);
+      }
+      gameLoop();
+    </script>
+  </body>
+</html>

@@ -10,8 +10,8 @@
 
 ## 事件循环
 
-1.  JavaScript 是单线程，非阻塞的
-2.  浏览器的事件循环
+1. JavaScript 是单线程，非阻塞的
+2. 浏览器的事件循环
 
 - 执行栈和事件队列
 - 宏任务和微任务
@@ -57,13 +57,13 @@ a();
 
 ![](https://pic3.zhimg.com/v2-2fd62f5c877540ea6fe7931cfb85d906_b.gif)
 
-1.  执行函数 `a()`先入栈
-2.  `a()`中先执行函数 `b()` 函数`b()` 入栈
-3.  执行函数`b()`, `console.log('b')` 入栈
-4.  输出 `b`， `console.log('b')`出栈
-5.  函数`b()` 执行完成，出栈
-6.  `console.log('a')` 入栈，执行，输出 `a`, 出栈
-7.  函数 a 执行完成，出栈。
+1. 执行函数 `a()`先入栈
+2. `a()`中先执行函数 `b()` 函数`b()` 入栈
+3. 执行函数`b()`, `console.log('b')` 入栈
+4. 输出 `b`， `console.log('b')`出栈
+5. 函数`b()` 执行完成，出栈
+6. `console.log('a')` 入栈，执行，输出 `a`, 出栈
+7. 函数 a 执行完成，出栈。
 
 事件队列: 异步代码的执行，遇到异步事件不会等待它返回结果，而是将这个事件挂起，继续执行执行栈中的其他任务。当异步事件返回结果，将它放到事件队列中，被放入事件队列不会立刻执行起回调，而是等待当前执行栈中所有任务都执行完毕，主线程空闲状态，主线程会去查找事件队列中是否有任务，如果有，则取出排在第一位的事件，并把这个事件对应的回调放到执行栈中，然后执行其中的同步代码。
 
@@ -156,8 +156,6 @@ console.log("Welcome to loupe.");
 
 ![](https://pic3.zhimg.com/v2-2e7e254b01adef50552ee4f5bc7591b2_b.jpg)
 
-![](https://pic3.zhimg.com/80/v2-2e7e254b01adef50552ee4f5bc7591b2_720w.webp)
-
 [深入理解 js 事件循环机制（浏览器篇）](https://link.zhihu.com/?target=http%3A//lynnelv.github.io/js-event-loop-browser) 这边文章中有个特别形象的动画，大家可以看着理解一下。
 
 ```js
@@ -180,10 +178,10 @@ console.log("end");
 
 ![](https://pic4.zhimg.com/v2-0d7af3f483aa991d41dd1f3ba7bac36f_b.gif)
 
-1.  全局代码压入执行栈执行，输出 `start`
-2.  setTimeout 压入 macrotask 队列，promise.then 回调放入 microtask 队列，最后执行 `console.log('end')`，输出 `end`
-3.  调用栈中的代码执行完成（全局代码属于宏任务），接下来开始执行微任务队列中的代码，执行 promise 回调，输出 `promise1`, promise 回调函数默认返回 undefined, promise 状态变成 fulfilled ，触发接下来的 then 回调，继续压入 microtask 队列，此时产生了新的微任务，会接着把当前的微任务队列执行完，此时执行第二个 promise.then 回调，输出 `promise2`
-4.  此时，microtask 队列 已清空，接下来会会执行 UI 渲染工作（如果有的话），然后开始下一轮 event loop, 执行 setTimeout 的回调，输出 `setTimeout`
+1. 全局代码压入执行栈执行，输出 `start`
+2. setTimeout 压入 macrotask 队列，promise.then 回调放入 microtask 队列，最后执行 `console.log('end')`，输出 `end`
+3. 调用栈中的代码执行完成（全局代码属于宏任务），接下来开始执行微任务队列中的代码，执行 promise 回调，输出 `promise1`, promise 回调函数默认返回 undefined, promise 状态变成 fulfilled ，触发接下来的 then 回调，继续压入 microtask 队列，此时产生了新的微任务，会接着把当前的微任务队列执行完，此时执行第二个 promise.then 回调，输出 `promise2`
+4. 此时，microtask 队列 已清空，接下来会会执行 UI 渲染工作（如果有的话），然后开始下一轮 event loop, 执行 setTimeout 的回调，输出 `setTimeout`
 
 最后的执行结果如下
 
@@ -317,12 +315,12 @@ console.log("script end");
 
 先执行宏任务（当前代码块也算是宏任务），然后执行当前宏任务产生的微任务，然后接着执行宏任务
 
-1.  从上往下执行代码，先执行同步代码，输出 `script start`
-2.  遇到 setTimeout，现把 setTimeout 的代码放到宏任务队列中
-3.  执行 async1()，输出 `async1 start`, 然后执行 async2(), 输出 `async2`，把 async2() 后面的代码 `console.log('async1 end')`放到微任务队列中
-4.  接着往下执行，输出 `promise1`，把 .then()放到微任务队列中；注意 Promise 本身是同步的立即执行函数，.then 是异步执行函数
-5.  接着往下执行， 输出 `script end`。同步代码（同时也是宏任务）执行完成，接下来开始执行刚才放到微任务中的代码
-6.  依次执行微任务中的代码，依次输出 `async1 end`、 `promise2`, 微任务中的代码执行完成后，开始执行宏任务中的代码，输出 `setTimeout`
+1. 从上往下执行代码，先执行同步代码，输出 `script start`
+2. 遇到 setTimeout，现把 setTimeout 的代码放到宏任务队列中
+3. 执行 async1()，输出 `async1 start`, 然后执行 async2(), 输出 `async2`，把 async2() 后面的代码 `console.log('async1 end')`放到微任务队列中
+4. 接着往下执行，输出 `promise1`，把 .then()放到微任务队列中；注意 Promise 本身是同步的立即执行函数，.then 是异步执行函数
+5. 接着往下执行， 输出 `script end`。同步代码（同时也是宏任务）执行完成，接下来开始执行刚才放到微任务中的代码
+6. 依次执行微任务中的代码，依次输出 `async1 end`、 `promise2`, 微任务中的代码执行完成后，开始执行宏任务中的代码，输出 `setTimeout`
 
 最后的执行结果如下
 
@@ -362,12 +360,12 @@ new Promise(function (resolve, reject) {
 
 这道题跟上面题目不同之处在于，执行代码会产生很多个宏任务，每个宏任务中又会产生微任务
 
-1.  从上往下执行代码，先执行同步代码，输出 `start`
-2.  遇到 setTimeout，先把 setTimeout 的代码放到宏任务队列 ① 中
-3.  接着往下执行，输出 `children4`, 遇到 setTimeout，先把 setTimeout 的代码放到宏任务队列 ② 中，此时.then 并不会被放到微任务队列中，因为 resolve 是放到 setTimeout 中执行的
-4.  代码执行完成之后，会查找微任务队列中的事件，发现并没有，于是开始执行宏任务 ①，即第一个 setTimeout， 输出 `children2`，此时，会把 `Promise.resolve().then`放到微任务队列中。
-5.  宏任务 ① 中的代码执行完成后，会查找微任务队列，于是输出 `children3`；然后开始执行宏任务 ②，即第二个 setTimeout，输出 `children5`，此时将.then 放到微任务队列中。
-6.  宏任务 ② 中的代码执行完成后，会查找微任务队列，于是输出 `children7`，遇到 setTimeout，放到宏任务队列中。此时微任务执行完成，开始执行宏任务，输出 `children6`;
+1. 从上往下执行代码，先执行同步代码，输出 `start`
+2. 遇到 setTimeout，先把 setTimeout 的代码放到宏任务队列 ① 中
+3. 接着往下执行，输出 `children4`, 遇到 setTimeout，先把 setTimeout 的代码放到宏任务队列 ② 中，此时.then 并不会被放到微任务队列中，因为 resolve 是放到 setTimeout 中执行的
+4. 代码执行完成之后，会查找微任务队列中的事件，发现并没有，于是开始执行宏任务 ①，即第一个 setTimeout， 输出 `children2`，此时，会把 `Promise.resolve().then`放到微任务队列中。
+5. 宏任务 ① 中的代码执行完成后，会查找微任务队列，于是输出 `children3`；然后开始执行宏任务 ②，即第二个 setTimeout，输出 `children5`，此时将.then 放到微任务队列中。
+6. 宏任务 ② 中的代码执行完成后，会查找微任务队列，于是输出 `children7`，遇到 setTimeout，放到宏任务队列中。此时微任务执行完成，开始执行宏任务，输出 `children6`;
 
 最后的执行结果如下
 
@@ -404,10 +402,10 @@ p().then((res) => {
 console.log("end");
 ```
 
-1.  执行代码，Promise 本身是同步的立即执行函数，.then 是异步执行函数。遇到 setTimeout，先把其放入宏任务队列中，遇到`p1.then`会先放到微任务队列中，接着往下执行，输出 `3`
-2.  遇到 `p().then` 会先放到微任务队列中，接着往下执行，输出 `end`
-3.  同步代码块执行完成后，开始执行微任务队列中的任务，首先执行 `p1.then`，输出 `2`, 接着执行`p().then`, 输出 `4`
-4.  微任务执行完成后，开始执行宏任务，setTimeout, `resolve(1)`，但是此时 `p1.then`已经执行完成，此时 `1`不会输出。
+1. 执行代码，Promise 本身是同步的立即执行函数，.then 是异步执行函数。遇到 setTimeout，先把其放入宏任务队列中，遇到`p1.then`会先放到微任务队列中，接着往下执行，输出 `3`
+2. 遇到 `p().then` 会先放到微任务队列中，接着往下执行，输出 `end`
+3. 同步代码块执行完成后，开始执行微任务队列中的任务，首先执行 `p1.then`，输出 `2`, 接着执行`p().then`, 输出 `4`
+4. 微任务执行完成后，开始执行宏任务，setTimeout, `resolve(1)`，但是此时 `p1.then`已经执行完成，此时 `1`不会输出。
 
 最后的执行结果如下
 
