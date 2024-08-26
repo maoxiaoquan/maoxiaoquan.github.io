@@ -95,7 +95,3 @@ tokio::fs::write(&filename, &data)
 我们使用了`tokio`提供的异步 API，将上传的内容保存到服务器。
 
 本章讨论了在 axum 实现文件上传功能，完整代码可以在我们的[代码库](https://github.com/axumrs/roaming-axum/blob/main/upload-file)中找到。
-
-[漫游 AXUM](/subject/roaming-axum)
-
-[axum](/tag/axum) [upload](/tag/upload) [文件上传](/tag/文件上传) [Multipart](/tag/Multipart)

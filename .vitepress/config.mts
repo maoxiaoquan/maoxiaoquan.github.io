@@ -146,94 +146,91 @@ export default defineConfig({
       },
     ],
     sidebar: {
-      "/article/back-end/rust/axum": [
-        {
-          text: "axum 中的各种响应",
-          link: "start1",
-        },
-        {
-          text: "axum 中获取请求数据",
-          link: "start2",
-        },
-        {
-          text: "路由",
-          link: "start4",
-        },
-        {
-          text: "中间件",
-          link: "start5",
-        },
-        {
-          text: "axum 处理静态文件",
-          link: "start6",
-        },
-        {
-          text: "axum 处理 cookie",
-          link: "start7",
-        },
-        {
-          text: "axum 操作 redis",
-          link: "start8",
-        },
-        {
-          text: "axum 实现 Session",
-          link: "start9",
-        },
-        {
-          text: "axum 集成 JWT",
-          link: "start10",
-        },
-        {
-          text: "axum 上传文件",
-          link: "start11",
-        },
-        {
-          text: "配置文件：让 axum app 可配置",
-          link: "start12",
-        },
-        {
-          text: "axum 错误处理",
-          link: "start13",
-        },
-      ],
-      "/article/back-end/rust/sea-orm": [
-        {
-          text: "SeaORM 和 axum 开发。",
-          link: "sea-orm1",
-        },
-        {
-          text: "查询数据",
-          link: "sea-orm2",
-        },
-        {
-          text: "插入数据",
-          link: "sea-orm3",
-        },
-        {
-          text: "修改数据",
-          link: "sea-orm4",
-        },
-        {
-          text: "删除数据",
-          link: "sea-orm5",
-        },
-        {
-          text: "操作一对多和多对一关系",
-          link: "sea-orm6",
-        },
-        {
-          text: "SeaORM 的命令行工具和自动迁移",
-          link: "sea-orm7",
-        },
-        {
-          text: "SeaORM 操作多对多关系",
-          link: "sea-orm8",
-        },
-      ],
+      //   "/article/back-end/rust/axum": [
+      //     {
+      //       text: "axum 中的各种响应",
+      //       link: "start1",
+      //     },
+      //     {
+      //       text: "axum 中获取请求数据",
+      //       link: "start2",
+      //     },
+      //     {
+      //       text: "路由",
+      //       link: "start4",
+      //     },
+      //     {
+      //       text: "中间件",
+      //       link: "start5",
+      //     },
+      //     {
+      //       text: "axum 处理静态文件",
+      //       link: "start6",
+      //     },
+      //     {
+      //       text: "axum 处理 cookie",
+      //       link: "start7",
+      //     },
+      //     {
+      //       text: "axum 操作 redis",
+      //       link: "start8",
+      //     },
+      //     {
+      //       text: "axum 实现 Session",
+      //       link: "start9",
+      //     },
+      //     {
+      //       text: "axum 集成 JWT",
+      //       link: "start10",
+      //     },
+      //     {
+      //       text: "axum 上传文件",
+      //       link: "start11",
+      //     },
+      //     {
+      //       text: "配置文件：让 axum app 可配置",
+      //       link: "start12",
+      //     },
+      //     {
+      //       text: "axum 错误处理",
+      //       link: "start13",
+      //     },
+      //   ],
+      //   "/article/back-end/rust/sea-orm": [
+      //     {
+      //       text: "SeaORM 和 axum 开发。",
+      //       link: "sea-orm1",
+      //     },
+      //     {
+      //       text: "查询数据",
+      //       link: "sea-orm2",
+      //     },
+      //     {
+      //       text: "插入数据",
+      //       link: "sea-orm3",
+      //     },
+      //     {
+      //       text: "修改数据",
+      //       link: "sea-orm4",
+      //     },
+      //     {
+      //       text: "删除数据",
+      //       link: "sea-orm5",
+      //     },
+      //     {
+      //       text: "操作一对多和多对一关系",
+      //       link: "sea-orm6",
+      //     },
+      //     {
+      //       text: "SeaORM 的命令行工具和自动迁移",
+      //       link: "sea-orm7",
+      //     },
+      //     {
+      //       text: "SeaORM 操作多对多关系",
+      //       link: "sea-orm8",
+      //     },
+      //   ],
     },
-
-    socialLinks: [
-      { icon: "github", link: "https://github.com/vuejs/vitepress" },
-    ],
+    socialLinks: [{ icon: "github", link: "https://github.com/maoxiaoquan" }],
   },
 });

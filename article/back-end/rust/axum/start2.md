@@ -353,5 +353,3 @@ headers = "0.3"
 > 2.  先在响应中写入，再从后续的请求中读取
 
 思考完成之后，你可以看一下我们准备的《[axum 处理 cookie](https://axum.rs/topic/roaming-axum/cookie)》章节。
-
-[漫游 AXUM](/subject/roaming-axum)
